@@ -1,0 +1,775 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %} 
+
+
+
+
+
+
+<main class="showcase">
+    <div class="overlay">
+        
+        <!-- navbar -->
+        {% include 'navbar.html' %}
+
+      <div class="container container-app">
+        <!-- alert -->
+        <a href="/dist/todays-forecast.html">
+          <div
+            class="alert alert-color d-flex align-items-center justify-content-center"
+            role="alert"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="40"
+              fill="currentColor"
+              class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+              viewBox="0 0 16 16"
+              role="img"
+              aria-label="Warning:"
+            >
+              <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+              />
+            </svg>
+            <div class="fs-4">Click to view today's forecast</div>
+          </div>
+        </a>
+
+        <!-- showcase area -->
+        <div class="showcase-main">
+          <section class="showcase-text">
+            <h3 class="fs-3 mt-2">
+              Welcome To <span class="h1 showcase-title mt-2">ForWEB</span>
+            </h3>
+            <p class="fs-5 forweb-text one">
+              An initiative of the Department of Meteorology and Climate
+              Science Programme,KNUST,
+              <span>
+                mandated to prepare, disseminate and evaluate daily weather
+                forecasts over the Ashanti Region, along with High-Impact
+                Weather (HiW) risk indicators for the entire country.</span
+              >
+            </p>
+            <p class="fs-5 forweb-text one1">
+              We are
+              <span>
+                mandated to prepare, disseminate and evaluate daily weather
+                forecasts over the Ashanti Region, along with High-Impact
+                Weather (HiW) risk indicators for the entire country.</span
+              >
+            </p>
+            <div class="showcase-btn">
+              <a href="/dist/forecasts.html" class="showcase-btn-link fs-5">
+                <button class="btn-1">View Forecast</button>
+              </a>
+              <!-- ps-3 -->
+              <a href="#contact" class="showcase-btn-link fs-5 ps-3">
+                <button class="btn-2">Wants to Join</button>
+              </a>
+            </div>
+          </section>
+
+          <section class="showcase-img">
+            <img
+              src="{% static 'images/showcase-img.svg' %}"
+              class="img-fluid"
+              alt="#"
+              width=""
+              height=""
+              loading="lazy"
+            />
+            
+          </section>
+        </div>
+      </div>
+
+
+  <!-- WHO WE ARE -->
+  <section class="who-we-are">
+    <div class="who-we-are__sub container">
+      <h2 class="text-center">Who We Are</h2>
+      <div class="who-we-are__main">
+        <div class="who-we-are__img">
+          <img
+            src="{% static 'images/who-we-are-img.svg' %}"
+            alt="who-we-are-img"
+            class="img-fluid wwd-img"
+            loading="lazy"
+          />
+          <!--             
+          <img
+            src="../dist/images/who-we-are-img.svg"
+            alt=""
+            class="img-fluid wwd-img"
+            loading="lazy"
+          /> -->
+        </div>
+        <div class="who-we-are__text fs-5">
+          <p>
+            Forecasters' Web (ForWEB) KNUST is an initiative of the
+            Department of Meteorology and Climate Science, 
+            KNUST. ForWEB KNUST is mandated to prepare, disseminate and
+            evaluate daily weather forecasts over the Ashanti Region, along
+            with High-Impact Weather (HiW) risk indicators for the entire
+            country.
+            <br />
+            <br />
+            GCRF African SWIFT Project (legacy) - Satellite Dish and
+            accessories (NWCSAF) for research on Nowcasting and its
+            operational use.
+          </p>
+          <a href="#" class="showcase-btn-link fs-5">
+            <button class="btn-3">
+              View More
+          
+              <span><i class="bi bi-arrow-down-circle-fill"></i></span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="what-we-do">
+    <div class="overlay">
+      <div class="what-we-do__sub container">
+        <h2 class="text-center">What We Do</h2>
+
+        <div class="what-we-do__main">
+          <div class="what-we-do__text fs-5 text-light">
+            <div class="text__main">
+              <div class="text-main">
+                <div class="one">
+                  <!-- <span><i class="fas fa-hand-point-right"></i></span> -->
+                  <span><i class="bi bi-heart-arrow"></i></span>
+                </div>
+                <!-- <span></span> -->
+                <div>Forecast Generation & Dissemination</div>
+              </div>
+
+              <div class="text-main">
+                <div class="two">
+                  <!-- <span><i class="fas fa-hand-point-right"></i></span> -->
+                  <span><i class="bi bi-heart-arrow"></i></span>
+                </div>
+                <div>
+                  Schools’ and Community Outreach to Create Awareness on
+                  Climate Change and Climate Science. (SDG 13 - Climate
+                  Action)
+                </div>
+              </div>
+
+              <div class="text-main">
+                <div class="three">
+                  <!-- <span><i class="fas fa-hand-point-right"></i></span> -->
+                  <span><i class="bi bi-heart-arrow"></i></span>
+                </div>
+                <div>
+                  Organizing Climate Webinars, Conference and Workshops.
+                </div>
+              </div>
+              <div>
+                <a href="#" class="showcase-btn-link fs-5">
+                  <button class="btn-4">
+                    View More <span><i class="bi bi-arrow-down-circle-fill"></i></span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="what-we-do__img">
+            <img
+              src="{% static 'images/what-we-do-img.svg' %}"
+              alt="what-we-do-img"
+              class="img-fluid wwd-img1"
+              loading="lazy"
+            />
+            <!--               
+            <img
+              src="../dist/images/what-we-do-img.svg"
+              alt=""
+              class="img-fluid wwd-img1"
+              loading="lazy"
+            /> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- </div> -->
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="container">
+      <h2 class="text-center gallery__heading">Gallery</h2>
+
+      <div class="accordion carousel-border" id="accordionFlushExample ">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button shadow-none collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              <span class="accordian-icon"
+                ><i class="bi bi-arrow-down-circle-fill"></i> FIRST FIVE STUDENTS
+              </span>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div class="img__phase-one">
+                <div class="main__card">
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                    <div class="name">
+                      <div class="">
+                        <span> <i class="bi bi-person-fill"></i> </span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Stephen Asare</small>
+                      </div>
+
+                    </div>
+
+                    <div class="school">
+
+                      <div>
+                        <span> <i class="bi bi-bookmarks-fill"></i> </span>
+                        <span>  </span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">KNUST, LEVEL 400</small>
+                      </div>
+                      
+                    </div>
+                    <div class="interest">
+                      <div>
+                        <span> <i class="bi bi-intersect"></i> </span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Modeling, Forecasting, Machine Learning</small>
+                      </div>
+                    </div>
+                 
+                  </div>
+
+                  <div class="one__1">
+                    <div>
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/vision.jpeg"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="name">
+                      <div class="">
+                        <span><i class="fas fa-user-tie"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Stephen Asare</small>
+                      </div>
+                    </div>
+                    <div class="school">
+                      <div>
+                        <span><i class="fas fa-file-alt"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">KNUST, LEVEL 400</small>
+                      </div>
+                    </div>
+                    <div class="interest">
+                      <div>
+                        <span><i class="fas fa-comment"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Modeling, Forecasting, Machine Learning</small>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="one__1">
+                    <div>
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/stephen.jpeg"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="name">
+                      <div class="">
+                        <span><i class="fas fa-user-tie"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Stephen Asare</small>
+                      </div>
+                    </div>
+                    <div class="school">
+                      <div>
+                        <span><i class="fas fa-file-alt"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">KNUST, LEVEL 400</small>
+                      </div>
+                    </div>
+                    <div class="interest">
+                      <div>
+                        <span><i class="fas fa-comment"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Modeling, Forecasting, Machine Learning</small>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="one__1">
+                    <div>
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/nat.jpeg"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="name">
+                      <div class="">
+                        <span><i class="fas fa-user-tie"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Stephen Asare</small>
+                      </div>
+                    </div>
+                    <div class="school">
+                      <div>
+                        <span><i class="fas fa-file-alt"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">KNUST, LEVEL 400</small>
+                      </div>
+                    </div>
+                    <div class="interest">
+                      <div>
+                        <span><i class="fas fa-comment"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Modeling, Forecasting, Machine Learning</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="one__1">
+                    <div>
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/kyei.jpeg"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="name">
+                      <div class="">
+                        <span><i class="fas fa-user-tie"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Stephen Asare</small>
+                      </div>
+                    </div>
+                    <div class="school">
+                      <div>
+                        <span><i class="fas fa-file-alt"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">KNUST, LEVEL 400</small>
+                      </div>
+                    </div>
+                    <div class="interest">
+                      <div>
+                        <span><i class="fas fa-comment"></i></span>
+                      </div>
+                      <div class="card-text">
+                        <small class="text-font">Modeling, Forecasting, Machine Learning</small>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button shadow-none collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              <span class="accordian-icon"
+                ><i class="bi bi-arrow-down-circle-fill"></i> MEETINGS & EVENTS
+              </span>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              
+              <div class="img__phase-one">
+                <h4>First Meeting</h4>
+                <p>22nd July 2022 : 02:49:55</p>
+                <div class="main__card">
+                  
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                </div>
+                <hr class="hr-color">
+              </div>
+
+
+              <div class="img__phase-one">
+                <h4>Meeting with Provost</h4>
+                <p>22nd July 2022 : 02:49:55</p>
+                <div class="main__card">
+                  
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="one__1">
+                    <div>  
+                        <img
+                          class="image-fluid img-thumbnail mb-3"
+                          src="/dist/images/jeff.jpeg"
+                          alt="img"
+                        />
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  
+
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button shadow-none collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              <span class="accordian-icon"
+                ><i class="fas fa-arrow-circle-down"></i> OTHERS
+              </span>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              third item's accordion body. Nothing more exciting happening
+              here in terms of content, but just filling up the space to make
+              it look, at least at first glance, a bit more representative of
+              how this would look in a real-world application.
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Want to be part of us -->
+  <section id="contact">
+  <section class="contact__us" id="contact__us">
+    <div class="overlay">
+    <div class="container">
+      <h2 class="text-center text-light contact__us-heading">Want To Be Part of Us</h2>
+      <div class="contact__us-main">
+        <div class="contact__us-img">
+          <img
+            src="{% static 'images/get-in-touch.svg' %}"
+            alt=""
+            class="img-fluid wwd-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="contact__us-form fs-5">
+          
+
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Name</label>
+              <input
+                type="text"
+                class="form-control shadow-none py-3"
+                id="name"
+                name="name"
+                autocomplete="off"
+                placeholder="E.g. Stephen Asare"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label text-light">Email</label>
+              <input
+                type="email"
+                class="form-control shadow-none py-3"
+                id="email"
+                name="email"
+                autocomplete="off"
+                placeholder="E.g. stephen@gmail.com"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Phone</label>
+              <input
+                type="number"
+                class="form-control shadow-none py-3"
+                id="phone"
+                name="phone"
+                autocomplete="off"
+                placeholder="E.g. +23354800000, 0559536754"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Reason To Join</label>
+              <!-- <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"> -->
+              <textarea
+                class="form-control shadow-none"
+                name="message"
+                id="message"
+                cols="30"
+                rows="7"
+                autocomplete="off"
+                placeholder="What's your reason to join"
+                required
+              ></textarea>
+            </div>
+  
+            <div class="contact__us-btn">
+              <a href="#" class="contact__us-btn-link fs-5">
+                <button class="btn-3">Submit</button>
+              </a>
+             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</section>
+</div>
+</main>
+
+
+
+
+{%endblock content %}
