@@ -16,6 +16,19 @@ class WhatWeDo(models.Model):
         return str(self.description)
 
 
+class About(models.Model):
+    title = models.CharField(max_length=200, blank=True, null=True)
+    featured_video = models.FileField(
+        upload_to='videos/', blank=True, null=True)
+    # created = models.DateTimeField(auto_now_add=True)
+    created = datetime.now()
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.title
+
+
 class Moderator(models.Model):
     name = models.CharField(max_length=200)
     school = models.CharField(max_length=500)
@@ -23,7 +36,7 @@ class Moderator(models.Model):
     location = models.CharField(max_length=200)
     is_staff = models.BooleanField(default=False)
     featured_image = models.ImageField(
-        null=True, upload_to='five-students/', default="five-students/default.jpg")
+        null=True, upload_to='images/moderators/', default="images/moderators/default.jpg")
     description = HTMLField(null=True, blank=True)
     social_email = models.EmailField(max_length=200, null=True, blank=True)
     social_facebook = models.URLField(max_length=2048, null=True, blank=True)

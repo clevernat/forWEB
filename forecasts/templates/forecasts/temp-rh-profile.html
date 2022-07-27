@@ -1,0 +1,91 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="single__forecast">
+  <div class="container">
+
+    <div class="back-btn">
+      <a href="{% url 'temperature-rh-graphs' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+  
+    <div class="single__forecast-main">
+      <div class="single__forecast-one">
+        <div class="single__forecast-header">
+          <div class="knust__logo">
+            <img
+              src="{% static 'media/images/knust-logo.png' %}"
+              alt="knust-logo"
+              width="50px"
+            />
+          </div>
+          <div class="map__header">
+            <h3>KNUST WEATHER FORECAST</h3>
+          </div>
+        </div>
+
+      
+        <div class="map__timestate">
+          <h3 class="text-center">
+            <span><i class="bi bi-clock-history"></i></span> 24 HOUR FORECAST
+          </h3>
+        </div>
+        <hr class="map__timestate-line" />
+        <div>
+          <p class="fs-5 text-center map__timestate-date">
+            <span class="text-uppercase">{{temperatures_rh_graph.created|date:"l"}}</span>,<span></span>
+              {{temperatures_rh_graph.created | date:"d-F-Y"}}
+            </span>
+            @ <span>{{temperatures_rh_graph.utc_date}} </span> UTC
+          </p>
+        </div>
+
+    
+
+        <div class="t-and-c__profile">
+          <img
+            src="{{temperatures_rh_graph.featured_graph.url}}"
+            alt="t-c-profile"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="view__btn">
+          <div>
+            <a href="{% url 'summary-forecast' temperatures_rh_graph.summary.id %}">
+              <button class="view__tc fs-5">VIEW SUMMARY FORECAST</button>
+            </a>
+          </div>
+          <div>
+            <!-- <a href="{% url 'map' temperatures_rh_graph.maps.id %}"></a> -->
+            <a href="{% url 'map' temperatures_rh_graph.map.id %}">
+              <button class="view__summary fs-5">VIEW FORECAST MAP</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="single__forecast__days-main">
+        <div class="single__forecast-days">
+          <a href="{% url 'temperature-rh-graphs' %}">
+            <i
+              class="bi bi-phone-flip icon-size"
+              data-bs-toggle="tooltip"
+              data-bs-placement="left"
+              data-bs-title="Tooltip on left"
+              title="View Previous Forecast"
+            ></i>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

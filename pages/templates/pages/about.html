@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %} {% include 'navbar.html' %}
+
+<!-- <h1>Aout Page</h1> -->
+
+<section class="single__forecast">
+  <div class="container">
+    <!-- Back button -->
+
+    <div class="back-btn">
+      <a href="{% url 'index' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <!-- ABout Page -->
+
+    <!-- about us video -->
+    <div class="video__forweb">
+      {% if video %} {% for vid in video %}
+      <video controls class="video1">
+        <source
+          src="{{vid.featured_video.url                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }}"
+          type="video/mp4"
+        />
+      </video>
+      {% endfor %} {% endif %}
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %} {% endblock content %}

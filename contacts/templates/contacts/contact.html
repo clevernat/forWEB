@@ -1,0 +1,78 @@
+{% extends 'main.html' %} {% block content %} {% include 'navbar.html' %}
+
+<!-- Want to be part of us -->
+<section id="contact">
+  <section class="contact__us" id="contact__us">
+    <div class="overlay">
+      <div class="container">
+        <h2 class="text-center text-light contact__us-heading">Contact Us</h2>
+        {% include 'alert.html' %}
+
+        <div class="contact__us-main">
+          <div class="map__loc">
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  width="600"
+                  height="500"
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=whitaker%20building,%20Department%20of%20physics&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                >
+                  Forecasters' Web (ForWEB) KNUST is an initiative of the
+                  Meteorology and Climate Science Programme, Department of
+                  Physics, KNUST. ForWEB KNUST is mandated to prepare,
+                  disseminate and evaluate daily weather forecasts over the
+                  Ashanti Region, along with High-Impact Weather (HiW) risk
+                  indicators for the entire country. GCRF African SWIFT Project
+                  (legacy) - Satellite Dish and accessories (NWCSAF) for
+                  research on Nowcasting and its </iframe
+                ><a href="https://123movies-to.org"></a><br /><style>
+                  .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 600px;
+                  }</style
+                ><a href="https://www.embedgooglemap.net"
+                  >create google map for website</a
+                ><style>
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 600px;
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__us-form fs-5">
+            <form action="{% url 'contact-us' %}" method="POST">
+              {% csrf_token %}
+              <div class="mb-3">
+                {% for field in form %}
+                <label for="name" class="form-label text-light mt-3"
+                  >{{field.label}}</label
+                >
+
+                {{field}} {% endfor %}
+              </div>
+              <div class="contact__us-btn">
+                <a href="#" class="contact__us-btn-link fs-5">
+                  <button class="btn-3">Submit</button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+{% include 'footer.html' %} {% endblock content %}

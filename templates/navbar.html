@@ -4,7 +4,7 @@
   <div class="container">
     <a class="navbar-brand" href="{% url 'index' %}">
       <img
-        src="{% static 'images/logo.png' %}"
+        src="{% static 'media/images/logo.png' %}"
         alt="logo"
         width="75"
         height=""
@@ -30,7 +30,7 @@
       <div class="offcanvas-header nav-color">
         <a href="#">
           <img
-            src="{% static 'images/logo.png' %}"
+            src="{% static 'media/images/logo.png' %}"
             alt="logo"
             width="70"
             height=""
@@ -50,32 +50,80 @@
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-0">
           <li class="nav-item mx-3 fs-5">
             <a
-              class="nav-link active"
+            {% if '/' == request.path %}
+            class="nav-link active"
               aria-current="page"
               href="{% url 'index' %}"
               >Home</a
+            {% else %}
+            class="nav-link"
+              aria-current="page"
+              href="{% url 'index' %}"
+              >Home</a
+            {% endif %}
+      
             >
           </li>
           <li class="nav-item mx-3 fs-5">
-            <a class="nav-link" aria-current="page" href="/dist/about.html"
+            <a 
+            {% if 'about' in request.path %}
+            class="nav-link active" aria-current="page" href="{% url 'about' %}"
               >About</a
             >
+            {% else %}
+            class="nav-link" aria-current="page" href="{% url 'about' %}"
+              >About</a
+            >
+            {% endif %}
+            
+            
           </li>
           <li class="nav-item mx-3 fs-5">
-            <a class="nav-link" aria-current="page" href="/dist/forecasts.html"
+            <a
+              {% if 'forecasts' in request.path %}
+              class="nav-link active" aria-current="page" href="{% url 'forecasts' %}"
               >Forecasts</a
             >
+              {% else %}
+              class="nav-link" aria-current="page" href="{% url 'forecasts' %}"
+              >Forecasts</a
+            >
+              {% endif %}
+           
           </li>
           <li class="nav-item mx-3 fs-5">
-            <a class="nav-link" aria-current="page" href="/dist/blog.html"
+            <a
+              {% if 'blog' in request.path %}
+              class="nav-link active" aria-current="page" href="{% url 'blog' %}"
               >Blog</a
             >
+              {% else %}
+              class="nav-link" aria-current="page" href="{% url 'blog' %}"
+              >Blog</a
+            >
+              {% endif %}
+            
           </li>
+
           <li class="nav-item ms-3 fs-5">
-            <a class="nav-link" aria-current="page" href="/dist/contact.html"
+            {% if 'contact-us' in request.path %}
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="{% url 'contact-us' %}"
               >Contact</a
             >
+            {% else %}
+            <a
+            class="nav-link"
+            aria-current="page"
+            href="{% url 'contact-us' %}"
+            >Contact</a
+          >
+            {% endif %}
+            
           </li>
+
         </ul>
       </div>
     </div>

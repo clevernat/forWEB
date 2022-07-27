@@ -1,0 +1,61 @@
+{% extends 'main.html' %} {% load humanize %} {% load static %}
+
+<!--  -->
+{% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="forecasts__days">
+  <div class="container">
+    <div class="back-btn">
+      <a href="{% url 'forecasts' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <div class="forecasts">
+      <div class="forecasts-heading">
+        <h1 class="text-center py-3">
+          TEMPERATURRE AND RELATIVE HUMIDITY GRAPHS
+        </h1>
+      </div>
+
+      <div class="forecasts__griding1">
+        {% for temperature_humidity_graph in temperature_humidity_graphs %}
+        <div class="forecast__one">
+          <a
+            class="img-link"
+            href="{% url 'temperature-rh-graph' temperature_humidity_graph.id %}"
+          >
+            <div>
+              <img
+                class="image-fluid img-thumbnail mb-3 image-size"
+                src="{{temperature_humidity_graph.featured_graph.url}}"
+                alt="img"
+              />
+            </div>
+
+            <div class="entail">
+              <div>
+                <span>
+                  <i class="bi bi-alarm-fill"></i>
+                </span>
+              </div>
+              <div class="card-text text-color">
+                <small class="text-font">
+                  Graph for
+                  <span
+                    >{{temperature_humidity_graph.created | naturalday}}</span
+                  >
+                </small>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

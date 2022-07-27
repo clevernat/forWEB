@@ -1,0 +1,206 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="single__forecast">
+  <div class="container">
+    <!-- Back button -->
+
+    <div class="back-btn">
+      <a href="{% url 'summary-forecasts' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <!-- main -->
+    <div class="single__forecast-main">
+      <div class="single__forecast-one">
+        <!-- header -->
+        <div class="single__forecast-header">
+          <div class="knust__logo">
+            <img
+              src="{% static 'media/images/knust-logo.png' %}"
+              alt="knust-logo"
+              width="50px"
+            />
+          </div>
+          <div class="map__header">
+            <h3>KNUST WEATHER FORECAST</h3>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="map__timestate">
+          <h3 class="text-center">
+            <span><i class="bi bi-clock-history"></i></span> 24 HOUR FORECAST
+          </h3>
+        </div>
+        <hr class="map__timestate-line" />
+        <div>
+          <p class="fs-5 text-center map__timestate-date">
+            <span class="text-uppercase">{{summary_forecast.created|date:"l"}}</span>,<span></span>
+              {{summary_forecast.created | date:"d-F-Y"}}
+            </span>
+            @ <span>{{summary_forecast.utc_date}} </span> UTC
+          </p>
+        </div>
+
+        <!-- SUMMARY TABLE-->
+
+        <div class="forecast__summary">
+          <div class="forecast__summary-header">
+            <h3 class="text-center">FORECAST SUMMARY (KUMASI)</h3>
+          </div>
+          <div class="summary__forecast-main">
+            <table>
+              <tr class="fs-4">
+                <th>MAIN</th>
+                <th>
+                  <span><i class="bi bi-brightness-high"></i></span> DAY
+                </th>
+                <th>
+                  <span><i class="bi bi-moon-stars-fill"></i></span> NIGHT
+                </th>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-thermometer"></i></span> Temperature
+                </td>
+                <td>{{summary_forecast.temperature_day}} ℃</td>
+                <td>{{summary_forecast.temperature_night}} ℃</td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-cloud-rain-heavy-fill"></i></span>
+                  Rain
+                </td>
+                <td>{{summary_forecast.rain_day}}</td>
+                <td>{{summary_forecast.rain_night}}</td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-percent"></i></span> Probability
+                </td>
+                <td><span>{{summary_forecast.probability_day}}</span> %</td>
+                <td><span>{{summary_forecast.probability_night}}</span> %</td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-droplet-fill"></i></span>
+                  Relative Humidity
+                </td>
+                <td><span>{{summary_forecast.relative_humidy_day}}</span> %</td>
+                <td><span>{{summary_forecast.relative_humidy_night}}</span> %</td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-wind"></i></span> Wind From
+                </td>
+                <td>{{summary_forecast.wind_from_day}}</td>
+                <td>{{summary_forecast.wind_from_night}}</td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-cloud-haze"></i></span> Wind Speed
+                </td>
+                <td><span>{{summary_forecast.wind_speed_day}}</span> ms<sup>-1</sup></td>
+                <td><span>{{summary_forecast.wind_speed_night}}</span> ms<sup>-1</sup></td>
+              </tr>
+              <tr class="fs-5 summary_color">
+                <td>
+                  <span><i class="bi bi-filter-left"></i></span> Wind Gust
+                </td>
+                <td><span>{{summary_forecast.wind_gust_day}}</span> ms<sup>-1</sup></td>
+                <td><span>{{summary_forecast.wind_gust_day}}</span> ms<sup>-1</sup></td>
+              </tr>
+            </table>
+          </div>
+          <div class="sunrise__sunset">
+            <div class="sunset">
+              <h4>SUNSET : <span>06:17 PM</span></h4>
+            </div>
+            <div class="sunrise">
+              <h4>SUNRISE : <span>05:51 AM</span></h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- btn -->
+        <div class="view__btn">
+          <div>
+            <!-- <a href="{% url 'temperature-rh-graph' summary_forecast.temp_rh.id %}"></a> -->
+            <a href="{% url 'temperature-rh-graph' summary_forecast.temperatureandrelativehumidity.id %}">
+              <button class="view__tc fs-5">VIEW T&C PROFILE</button>
+            </a>
+          </div>
+          <div>
+            <!-- <a href="{% url 'map' summary_forecast.maps.id %}"> -->
+              <a href="{% url 'map' summary_forecast.map.id %}">
+              <button class="view__summary fs-5">VIEW FORECAST MAP</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="single__forecast__days-main">
+        <div class="single__forecast-days">
+          <a href="#">
+            <i
+              class="bi bi-phone-flip icon-size"
+              data-bs-toggle="tooltip"
+              data-bs-placement="left"
+              data-bs-title="Tooltip on left"
+              title="View Previous Forecast"
+            ></i>
+          </a>
+          <!-- <div>
+            <h3
+              class="previous__forecast previous__forecast-header text-center"
+            >
+              PREVIOUS SUMMARY FORECASTS
+            </h3>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">MONDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">TUESDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">WEDNESDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">THURSDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">FRIDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">SATURDAY</button>
+            </a>
+          </div>
+          <div class="monday">
+            <a href="#">
+              <button class="monday__btn fs-4">SUNDAY</button>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

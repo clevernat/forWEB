@@ -1,0 +1,82 @@
+{% extends 'main.html' %} {% load humanize %} {% load static %}
+
+<!--  -->
+{% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="forecasts__days">
+  <div class="container">
+    <!-- Back button -->
+
+    <div class="back-btn">
+      <a href="{% url 'forecasts' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <!-- <h1>Grouped Forecasts</h1> -->
+
+    <div class="forecasts">
+      <div class="forecasts-heading">
+        <h1 class="text-center py-3">FORECAST(MAPS)</h1>
+      </div>
+
+      <div class="forecasts__griding">
+        {% for map in maps %}
+        <div class="forecast__one">
+          <a class="img-link" href="{% url 'map' map.id %}">
+            <div>
+              <img
+                class="image-fluid img-thumbnail mb-3 image-size"
+                src="{{map.featured_map.url}}"
+                alt="img"
+              />
+            </div>
+
+            <!-- <div class="time">
+              <div class="">
+                <span> <i class="bi bi-alarm-fill"></i> </span>
+              </div>
+              <div class="card-text">
+                <small class="text-font">{{map.created | date:"d-F-Y"}}</small>
+              </div>
+            </div> -->
+            <div class="entail">
+              <div>
+                <span>
+                  <i class="bi bi-alarm-fill"></i>
+                </span>
+              </div>
+              <div class="card-text text-color">
+                <small class="text-font">
+                  Map for <span>{{map.created|naturalday }}</span>
+                </small>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- 
+    <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav> -->
+  </div>
+</section>
+
+{% endblock content %}

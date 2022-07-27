@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pages.models import WhatWeDo, Moderator
+from pages.models import WhatWeDo, Moderator, About
 
 # Register your models here.
 
@@ -14,4 +14,5 @@ class ModeratorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(WhatWeDo)
+admin.site.register(About)
 admin.site.register(Moderator, ModeratorAdmin)

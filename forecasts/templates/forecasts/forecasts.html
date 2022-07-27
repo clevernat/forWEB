@@ -1,0 +1,49 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="forecasts__days">
+  <div class="container">
+    <div class="back-btn">
+      <a href="/dist/index.html">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <div class="forecasts">
+      <div class="forecasts-heading">
+        <h1 class="text-center">FORECASTS</h1>
+      </div>
+
+      <div class="forecasts__grid">
+        <!-- days of the week -->
+        <div class="monday">
+          <a href="{% url 'maps' %}">
+            <button class="monday__btn">
+              <span><i class="bi bi-compass"></i></span>
+              FORECAST(MAP)
+            </button>
+          </a>
+        </div>
+        <div class="monday">
+          <a href="{% url 'temperature-rh-graphs' %}">
+            <button class="monday__btn">
+              <span><i class="bi bi-thermometer-sun"></i></span> T & RH PROFILES
+            </button>
+          </a>
+        </div>
+        <div class="monday">
+          <a href="{% url 'summary-forecasts' %}">
+            <button class="monday__btn">
+              <span><i class="bi bi-card-checklist"></i></span> SUMMARY
+              FORECASTS
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     'pages.apps.PagesConfig',
+    'contacts.apps.ContactsConfig',
+    'forecasts.apps.ForecastsConfig',
+    'blog.apps.BlogConfig',
+
 
     'tinymce',
 ]
@@ -125,14 +130,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = '/images/'
+# MEDIA_URL = '/images/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = BASE_DIR / 'static/media'
+# MEDIA_ROOT = BASE_DIR / 'static/images'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 

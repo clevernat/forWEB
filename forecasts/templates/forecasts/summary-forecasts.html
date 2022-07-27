@@ -1,0 +1,60 @@
+{% extends 'main.html' %} {% load humanize %} {% load static %}
+
+<!--  -->
+{% block content %}
+
+<!-- navigation bar -->
+{%include 'navbar.html' %}
+
+<section class="forecasts__days">
+  <div class="container">
+    <!-- Back button -->
+    <div class="back-btn">
+      <a href="{% url 'forecasts' %}">
+        <span><i class="bi bi-arrow-left fa-3x"></i></span>
+      </a>
+    </div>
+
+    <!-- <h1>Grouped Forecasts</h1> -->
+    <div class="forecasts-summary">
+      <div class="forecasts-heading">
+        <h1 class="text-center py-3">SUMMARY FORECASTS</h1>
+      </div>
+
+      <div class="forecasts__grid-summary">
+        <!-- days of the week -->
+        {% for summary_forecast in summary_forecasts %}
+        <div class="monday">
+          <a
+            class="img-link"
+            href="{% url 'summary-forecast' summary_forecast.id %}"
+          >
+            <button class="monday__btn">
+              <span><i class="bi bi-watch"></i></span>
+              {{summary_forecast.created|naturalday}}
+            </button>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav> -->
+  </div>
+</section>
+
+{% endblock content %}
