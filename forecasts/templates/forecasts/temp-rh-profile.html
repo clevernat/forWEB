@@ -1,4 +1,13 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %} 
+
+
+
+<!--  -->
+
+{% block title %} T&RH Graph, {{temperatures_rh_graph.created.date}} {% endblock %}
+
+<!--  -->
+{% block content %}
 
 <!-- navigation bar -->
 {%include 'navbar.html' %}
@@ -61,7 +70,7 @@
             </a>
           </div>
           <div>
-            <!-- <a href="{% url 'map' temperatures_rh_graph.maps.id %}"></a> -->
+          
             <a href="{% url 'map' temperatures_rh_graph.map.id %}">
               <button class="view__summary fs-5">VIEW FORECAST MAP</button>
             </a>

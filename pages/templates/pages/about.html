@@ -1,4 +1,11 @@
-{% extends 'main.html' %} {% block content %} {% include 'navbar.html' %}
+{% extends 'main.html' %}
+
+<!--  -->
+
+{% block title %} About-Us {% endblock %}
+<!--  -->
+
+{% block content %} {% include 'navbar.html' %}
 
 <!-- <h1>Aout Page</h1> -->
 
@@ -18,10 +25,7 @@
     <div class="video__forweb">
       {% if video %} {% for vid in video %}
       <video controls class="video1">
-        <source
-          src="{{vid.featured_video.url                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }}"
-          type="video/mp4"
-        />
+        <source src="{{vid.featured_video.url}}" type="video/mp4" />
       </video>
       {% endfor %} {% endif %}
     </div>

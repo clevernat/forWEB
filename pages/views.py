@@ -10,7 +10,6 @@ from django.contrib import messages
 def pages(request):
     what_we_do = WhatWeDo.objects.order_by('created').all()
     moderators = Moderator.objects.order_by('-is_staff', 'created').all()
-    # todays_forecast = Map.objects.order_by('-created').all()[0]
 
     # contact page
     form = ContactForm()

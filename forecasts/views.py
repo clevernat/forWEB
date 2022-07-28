@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import redirect, render
 from forecasts.models import Map, TemperatureAndRelativeHumidity, SummaryForecast
 
@@ -6,6 +7,28 @@ from forecasts.models import Map, TemperatureAndRelativeHumidity, SummaryForecas
 
 def forecasts(request):
     return render(request, 'forecasts/forecasts.html')
+
+
+def today_forecast_map(request):
+    map = Map.objects.order_by('-created').all()[:1]
+
+    context = {'maps': map}
+    return render(request, 'forecasts/today-forecast-map.html', context)
+
+
+def today_forecast_t_rh_graph(request):
+    temp_rh = TemperatureAndRelativeHumidity.objects.order_by(
+        '-created').all()[:1]
+
+    context = {'temp_rhs': temp_rh}
+    return render(request, 'forecasts/today-forecast-t-rh.html', context)
+
+
+def today_forecast_summary(request):
+    summary = SummaryForecast.objects.order_by(
+        '-created').all()[:1]
+    context = {'summarys': summary}
+    return render(request, 'forecasts/today-forecast-summary.html', context)
 
 
 def maps(request):

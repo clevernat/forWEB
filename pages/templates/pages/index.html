@@ -1,4 +1,8 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %}
+
+<!--  -->
+
+{% block title %} Home {% endblock %} {% block content %}
 
 <main class="showcase">
   <div class="overlay">
@@ -7,7 +11,7 @@
 
     <div class="container container-app">
       <!-- alert -->
-      <a href="">
+      <a href="{% url 'today-forecast-map' %}">
         <div
           class="alert alert-color d-flex align-items-center justify-content-center"
           role="alert"

@@ -1,0 +1,146 @@
+{% extends 'main.html' %}
+{% load static %} 
+<!--  -->
+
+{% block title %} Today's Forecast(Map) {% endblock %}
+<!--  -->
+
+{% block content %} {% include 'navbar.html' %}
+
+
+
+
+
+
+<section class="single__forecast">
+    <div class="container">
+      <!-- Back button -->
+  
+      <div class="back-btn">
+        <a href="{% url 'index' %}">
+          <span><i class="bi bi-arrow-left fa-3x"></i></span>
+        </a>
+      </div>
+  
+      <!-- main -->
+      <div class="single__forecast-main">
+        <div>
+        {% for map in maps %}
+        <div>
+        <div class="single__forecast-one">
+          <!-- header -->
+          <div class="single__forecast-header">
+            <div class="knust__logo">
+              <img
+                src="{% static 'media/images/knust-logo.png' %}"
+                alt="knust-logo"
+                width="50px"
+              />
+            </div>
+            <div class="map__header">
+              <h3>KNUST WEATHER FORECAST</h3>
+            </div>
+          </div>
+  
+          <!--  -->
+          <div class="map__timestate">
+            <h3 class="text-center">
+              <span><i class="bi bi-clock-history"></i></span> 24 HOUR FORECAST
+            </h3>
+          </div>
+          <hr class="map__timestate-line" />
+          <div>
+            <p class="fs-5 text-center map__timestate-date">
+              <span class="text-uppercase">{{map.created|date:"l"}}</span>,<span></span>
+                {{map.created | date:"d-F-Y"}}
+              </span>
+              @ <span>{{map.utc_date}} </span> UTC
+            </p>
+          </div>
+  
+          <!-- main map -->
+          <div class="main__map">
+            <!-- <div class="img-border"> -->
+            <div class="map">
+              <img
+                class="img-fluid map-img"
+                src="{{map.featured_map.url}}"
+                alt="map"
+              />
+            </div>
+            <!-- </div> -->
+  
+            <div class="forecast__icons">
+              <div class="rain">
+                <span><i class="bi bi-cloud-rain-heavy-fill fa-2x"></i> </span>
+                <p>Rain</p>
+              </div>
+              <div class="wind">
+                <div>
+                  <span> <i class="bi bi-wind fa-2x"></i> </span>
+                </div>
+                <div>
+                  <p>Wind</p>
+                </div>
+              </div>
+              <div class="dust">
+                <span><i class="bi bi-cloud-haze2-fill fa-2x"></i></span>
+                <p>Dust</p>
+              </div>
+              <br />
+              <div class="low-risk">
+                <p>Low Risk</p>
+              </div>
+              <div class="be-aware">
+                <p>Be Aware</p>
+              </div>
+              <div class="be-prepared">
+                <p>Be Prepared</p>
+              </div>
+              <div class="take-action">
+                <p>Take Action</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+          <!-- btn -->
+          <div class="view__btn">
+            <div>
+              <a href="{% url 'today-forecast-graph' %}">
+                <button class="view__tc fs-5">VIEW T & RH PROFILE</button>
+              </a>
+            </div>  
+            <div>
+              <a href="{% url 'today-forecast-summary' %}">
+                <button class="view__summary fs-5">VIEW SUMMARY FORECAST</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        </div>
+        <!-- previous forecast  -->
+        <div class="single__forecast__days-main">
+          <div class="single__forecast-days">
+            <a href="{% url 'maps' %}">
+              <i
+                class="bi bi-phone-flip icon-size"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                data-bs-title="Tooltip on left"
+                title="View Previous Forecast"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+{% endblock content %}

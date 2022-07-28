@@ -1,4 +1,11 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %}
+
+<!--  -->
+
+{% block title %} Forecasts {% endblock %}
+
+<!--  -->
+{% block content %}
 
 <!-- navigation bar -->
 {%include 'navbar.html' %}
@@ -6,7 +13,7 @@
 <section class="forecasts__days">
   <div class="container">
     <div class="back-btn">
-      <a href="/dist/index.html">
+      <a href="{% url 'index' %}">
         <span><i class="bi bi-arrow-left fa-3x"></i></span>
       </a>
     </div>

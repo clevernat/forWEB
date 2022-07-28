@@ -1,4 +1,14 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %} 
+
+
+
+<!--  -->
+
+{% block title %} Summary-Forecast, {{summary_forecast.created.date}} {% endblock %}
+
+<!--  -->
+
+{% block content %}
 
 <!-- navigation bar -->
 {%include 'navbar.html' %}
@@ -129,13 +139,13 @@
         <!-- btn -->
         <div class="view__btn">
           <div>
-            <!-- <a href="{% url 'temperature-rh-graph' summary_forecast.temp_rh.id %}"></a> -->
+
             <a href="{% url 'temperature-rh-graph' summary_forecast.temperatureandrelativehumidity.id %}">
               <button class="view__tc fs-5">VIEW T&C PROFILE</button>
             </a>
           </div>
           <div>
-            <!-- <a href="{% url 'map' summary_forecast.maps.id %}"> -->
+            
               <a href="{% url 'map' summary_forecast.map.id %}">
               <button class="view__summary fs-5">VIEW FORECAST MAP</button>
             </a>
@@ -146,7 +156,7 @@
       <!--  -->
       <div class="single__forecast__days-main">
         <div class="single__forecast-days">
-          <a href="#">
+          <a href="{% url 'summary-forecasts' %}">
             <i
               class="bi bi-phone-flip icon-size"
               data-bs-toggle="tooltip"
